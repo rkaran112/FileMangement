@@ -164,7 +164,7 @@ class FileOperations():
         except IOError as e:
             print(f"IO Error: {e}")
 class AddFunction():
-        def create_Zip(self):
+    def create_Zip(self):
         Dir_path = dir_mn.check_dir()
         print("Directory Path:", Dir_path)  # Debugging output
         if not Dir_path:
@@ -186,13 +186,6 @@ class AddFunction():
                     zip_File.write(file_path, os.path.basename(file))
                 # zip.set_password(password.encode())
                 print(f"Archive '{zip_Name}.zip' created successfully with password.")
-
-        except FileNotFoundError:
-            print("Error: Directory not found.")
-        except zip.BadZipFile:
-            print("Error: File is corrupt.")
-        except PermissionError:
-            print("Error: Permission denied. Check if you have the necessary permissions to access the directory.")
 
         except FileNotFoundError:
             print("Error: Directory not found.")

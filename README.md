@@ -59,8 +59,7 @@ Enter a number and follow the prompts (e.g. entering a directory path, then a fi
 **Work in progress.** The core menu and each operation are implemented and mostly reachable end-to-end, but there are known issues in the current code:
 
 - `DirectoryManagement.check_dir()` has inconsistent return values: it returns the path string when the directory already exists, but returns `True` (not the path) when the directory is newly created — code that calls `check_dir()` and then does `os.path.join(dir_path, ...)` will break in the "directory just created" case. It also has no `return` for the "don't create it" branch, so that path implicitly returns `None`.
-- `AddFunction.create_Zip()` contains duplicated/copy-pasted `except` blocks and its docstring/comment mentions a password-protected archive, but the password logic is commented out and not implemented.
-- `AddFunction` methods (`create_Zip`/`extract_Zip`) have inconsistent indentation relative to the rest of the file (not a syntax error, but a style issue).
+- `AddFunction.create_Zip()`'s docstring/comment mentions a password-protected archive, but the password logic is commented out and not implemented.
 - The script has no `if __name__ == "__main__":` guard — it executes the menu loop at import time, and there is a stray extra `main_menu()` call after the loop ends (line 276) that has no effect but is dead/leftover code.
 - No automated tests, no `requirements.txt`, and no license file are present.
 
