@@ -29,7 +29,7 @@ class FileManagement():
                 try:
                     file_path = os.path.join(Dir_path, F_name)
                     with open (file_path,'x') as new_file:
-                        print("File '{F_name}.txt'  created Successfully")
+                        print(f"File '{F_name}' created Successfully")
                 except FileExistsError:
                     print(f"File '{F_name}.txt' already Exists")
         except FileNotFoundError:
