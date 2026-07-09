@@ -115,6 +115,9 @@ class FileOperations():
 
     def write_File(self):
         Dir_path = dir_mn.check_dir()
+        if not Dir_path:
+            print("Invalid directory.")
+            return
         F_name=input("Enter the name of the file")
         try:
             file_Path = os.path.join(Dir_path,F_name)
