@@ -26,6 +26,7 @@ class FileManagement():
                 F_name=input("Enter the name of the file")
                 if not F_name:
                     print("file must have name")
+                    return
                 try:
                     file_path = os.path.join(Dir_path, F_name)
                     with open (file_path,'x') as new_file:
