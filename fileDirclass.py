@@ -73,7 +73,11 @@ class DirectoryManagement():
     def check_dir(self):
         Dir_path = input("Enter the path of the directory")
         if not os.path.exists(Dir_path):
-            Exit = int(input("Few directories missing do you want to create them \n1.Yes\n2.No?"))
+            try:
+                Exit = int(input("Few directories missing do you want to create them \n1.Yes\n2.No?"))
+            except ValueError:
+                print("Invalid choice, please enter 1 or 2.")
+                return False
             try:
                 if Exit==1:
                     print("Created the directory and other missing directories")
