@@ -135,36 +135,40 @@ class FileOperations():
     def copy_File(self):
         F_name = input("Enter the name File to be copied ")
         file_Path= dir_mn.check_dir()
-        try:
-            src = os.path.join(file_Path,F_name)
-        except FileNotFoundError:
-            print("Error")
+        if not file_Path:
+            print("Invalid source directory.")
+            return
+        src = os.path.join(file_Path,F_name)
         print("Enter the File where it has to be copied")
         dst= dir_mn.check_dir()
+        if not dst:
+            print("Invalid destination directory.")
+            return
         try:
-            if src and dst:
-                sh.copy(src,dst)
-                print(f"File '{src}' copied to '{dst}' successfully.")
+            sh.copy(src,dst)
+            print(f"File '{src}' copied to '{dst}' successfully.")
         except PermissionError:
             print("Error: Insufficient permissions to copy the file.")
         except sh.SameFileError:
             print("Error: Source and destination paths point to the same file.")
         except IOError as e:
             print(f"IO Error: {e}")
-    
+
     def move_File(self):
         F_name = input("Enter the name File to be Moved ")
         file_Path= dir_mn.check_dir()
-        try:
-            src = os.path.join(file_Path,F_name)
-        except FileNotFoundError:
-            print("Error")
+        if not file_Path:
+            print("Invalid source directory.")
+            return
+        src = os.path.join(file_Path,F_name)
         print("Enter the File where it has to be Moved")
         dst= dir_mn.check_dir()
+        if not dst:
+            print("Invalid destination directory.")
+            return
         try:
-            if src and dst:
-                sh.move(src,dst)
-                print(f"File '{src}' Moved to '{dst}' successfully.")
+            sh.move(src,dst)
+            print(f"File '{src}' Moved to '{dst}' successfully.")
         except PermissionError:
             print("Error: Insufficient permissions to copy the file.")
         except sh.SameFileError:
