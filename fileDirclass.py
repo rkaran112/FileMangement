@@ -184,7 +184,7 @@ class AddFunction():
             return
 
         try:
-            zip_Archive = [d for d in os.listdir(Dir_path) if os.path.join(Dir_path, d)]
+            zip_Archive = [d for d in os.listdir(Dir_path) if os.path.isfile(os.path.join(Dir_path, d))]
             if not zip_Archive:
                 print("No files found in the directory to zip.")
                 return
@@ -197,7 +197,7 @@ class AddFunction():
                     file_path = os.path.join(Dir_path, file)
                     zip_File.write(file_path, os.path.basename(file))
                 # zip.set_password(password.encode())
-                print(f"Archive '{zip_Name}.zip' created successfully with password.")
+                print(f"Archive '{zip_Name}.zip' created successfully.")
 
         except FileNotFoundError:
             print("Error: Directory not found.")
