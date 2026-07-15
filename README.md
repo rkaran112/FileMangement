@@ -58,7 +58,6 @@ Enter a number and follow the prompts (e.g. entering a directory path, then a fi
 
 **Work in progress.** The core menu and each operation are implemented and mostly reachable end-to-end, but there are known issues in the current code:
 
-- `DirectoryManagement.check_dir()` has no `return` for the "don't create it" branch, so declining to create a missing directory implicitly returns `None`.
 - `AddFunction.create_Zip()`'s docstring/comment mentions a password-protected archive, but the password logic is commented out and not implemented.
 - The script has no `if __name__ == "__main__":` guard — it executes the menu loop at import time.
 - No automated tests, no `requirements.txt`, and no license file are present.
