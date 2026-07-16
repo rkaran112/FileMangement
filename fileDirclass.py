@@ -32,7 +32,7 @@ class FileManagement():
                     with open (file_path,'x') as new_file:
                         print(f"File '{F_name}' created Successfully")
                 except FileExistsError:
-                    print(f"File '{F_name}.txt' already Exists")
+                    print(f"File '{F_name}' already Exists")
         except FileNotFoundError:
                 print("Invalid Path ",Dir_path)
     
