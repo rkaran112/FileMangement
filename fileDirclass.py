@@ -149,6 +149,8 @@ class FileOperations():
         try:
             sh.copy(src,dst)
             print(f"File '{src}' copied to '{dst}' successfully.")
+        except FileNotFoundError:
+            print(f"Error: Source file '{src}' not found.")
         except PermissionError:
             print("Error: Insufficient permissions to copy the file.")
         except sh.SameFileError:
@@ -171,6 +173,8 @@ class FileOperations():
         try:
             sh.move(src,dst)
             print(f"File '{src}' Moved to '{dst}' successfully.")
+        except FileNotFoundError:
+            print(f"Error: Source file '{src}' not found.")
         except PermissionError:
             print("Error: Insufficient permissions to copy the file.")
         except sh.SameFileError:
