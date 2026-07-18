@@ -249,38 +249,40 @@ def main_menu():
 
     choice = input("Enter your choice: ")
     return choice
-add_function = AddFunction()
-dir_mn = DirectoryManagement()
-file_management = FileManagement()
-file_operation  = FileOperations()
 
-while True:
-    choice = main_menu()
+if __name__ == "__main__":
+    add_function = AddFunction()
+    dir_mn = DirectoryManagement()
+    file_management = FileManagement()
+    file_operation  = FileOperations()
 
-    if choice == '1':
-        file_management.open_file()
-    elif choice == '2':
-        file_management.create_File()
-    elif choice == '3':
-        file_management.delete_File()
-    elif choice == '4':
-        file_management.search_File()
-    elif choice == '5':
-        file_operation.write_File()
-    elif choice == '6':
-        file_operation.copy_File()
-    elif choice == '7':
-        file_operation.move_File()
-    elif choice == '8':
-        add_function.create_Zip()
-    elif choice == '9':
-        add_function.extract_Zip()
-    elif choice == '10':
-        dir_mn.list_Directories()
-    elif choice == '11':
-        dir_mn.remove_Path()
-    elif choice == '12':
-        print("Exiting program.")
-        break
-    else:
-        print("Invalid choice. Please try again.")
+    while True:
+        choice = main_menu()
+
+        if choice == '1':
+            file_management.open_file()
+        elif choice == '2':
+            file_management.create_File()
+        elif choice == '3':
+            file_management.delete_File()
+        elif choice == '4':
+            file_management.search_File()
+        elif choice == '5':
+            file_operation.write_File()
+        elif choice == '6':
+            file_operation.copy_File()
+        elif choice == '7':
+            file_operation.move_File()
+        elif choice == '8':
+            add_function.create_Zip()
+        elif choice == '9':
+            add_function.extract_Zip()
+        elif choice == '10':
+            dir_mn.list_Directories()
+        elif choice == '11':
+            dir_mn.remove_Path()
+        elif choice == '12':
+            print("Exiting program.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
