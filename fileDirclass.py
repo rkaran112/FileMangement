@@ -45,6 +45,8 @@ class FileManagement():
                 if os.path.exists(file_Path):
                     os.remove(file_Path)
                     print("Removed file successfully")
+                else:
+                    print(f"File '{F_name}' not found.")
             except FileNotFoundError as e:
                 print("Invalid or missing directories",e)
  
