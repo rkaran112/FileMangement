@@ -200,12 +200,13 @@ class AddFunction():
             zip_Name = input("Enter the Name of the Archive: ")
             # password = input("Enter the password for the archive: ")
 
-            with zip.ZipFile(f"{zip_Name}.zip", 'w') as zip_File:
+            zip_Path = os.path.join(Dir_path, f"{zip_Name}.zip")
+            with zip.ZipFile(zip_Path, 'w') as zip_File:
                 for file in zip_Archive:
                     file_path = os.path.join(Dir_path, file)
                     zip_File.write(file_path, os.path.basename(file))
                 # zip.set_password(password.encode())
-                print(f"Archive '{zip_Name}.zip' created successfully.")
+                print(f"Archive '{zip_Path}' created successfully.")
 
         except FileNotFoundError:
             print("Error: Directory not found.")
