@@ -87,8 +87,8 @@ class DirectoryManagement():
                     return Dir_path
                 else:
                     return False
-            except FileNotFoundError as e :
-                print("File not fond", str(e))
+            except OSError as e :
+                print("Could not create directory:", str(e))
                 return False
         else:
             return Dir_path
