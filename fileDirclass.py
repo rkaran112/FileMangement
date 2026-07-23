@@ -94,12 +94,14 @@ class DirectoryManagement():
             return Dir_path
     
     def remove_Path(self):
-        Dir_path = self.check_dir()  # Assuming dir_mn is an instance of DirectoryManagement
+        Dir_path = self.check_dir()
 
         try:
             if Dir_path:
                 sh.rmtree(Dir_path)
                 print("Removed Directory successfully")
+            else:
+                print("Invalid directory.")
         except FileNotFoundError as e:
             print("Invalid or missing directories:", e)
     
