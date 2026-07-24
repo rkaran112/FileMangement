@@ -180,7 +180,7 @@ class FileOperations():
         except FileNotFoundError:
             print(f"Error: Source file '{src}' not found.")
         except PermissionError:
-            print("Error: Insufficient permissions to copy the file.")
+            print("Error: Insufficient permissions to move the file.")
         except sh.SameFileError:
             print("Error: Source and destination paths point to the same file.")
         except IOError as e:
